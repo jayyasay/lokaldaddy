@@ -4,6 +4,8 @@ import Gallery from "./Components/Gallery";
 import Navigation from "./Components/Navigation";
 import Slider from "./Components/Slider";
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <>
@@ -12,6 +14,7 @@ function App() {
       <Gallery />
       <Contact />
       <Footer />
+      <Analytics />
     </>
   );
 }
