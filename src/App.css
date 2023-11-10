@@ -1,108 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 
 #root {
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
 
 #root * {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .dropdown-toggle {
-    color: #f8f9fa !important;
+  color: #f8f9fa !important;
 }
 
 .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 
 .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 .card {
-    padding: 2em;
+  padding: 2em;
 }
 
 .read-the-docs {
-    color: #888;
+  color: #888;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.reset-width {
+  width: inherit;
+}
+
+.mb-sm-32 {
+  margin-bottom: 42px;
 }
 
 .homepage-card {
-    top: 0;
-    bottom: 0;
-    right: 30px;
-    width: 344px;
-    height: fit-content;
-    background: rgba(211, 211, 211, 0.10);
-    align-items: flex-end;
-    margin: auto;
-    padding: 14px;
-    border-radius: 0;
-    z-index: 2;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 344px;
+  height: fit-content;
+  background: rgba(211, 211, 211, 0.1);
+  align-items: flex-end;
+  margin: auto;
+  padding: 14px;
+  border-radius: 0;
+  z-index: 2;
 }
 
 .homepage-card-body {
-    padding: 0;
-    color: #EEE;
-    text-align: right;
-    font-family: Roboto;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 62.688%;
-    font-variant: all-small-caps;
-    letter-spacing: -2.25px;
-    display: flex;
-    align-items: center;
+  padding: 0;
+  color: #eee;
+  text-align: right;
+  font-family: Roboto;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 62.688%;
+  font-variant: all-small-caps;
+  letter-spacing: -2.25px;
+  display: flex;
+  align-items: center;
 }
 
-.swiper-button-prev:after, .swiper-button-next:after {
-    font-size: 20px;
-    color: #fff;
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px;
+  color: #fff;
 }
 
 .swiper-pagination-bullet-active {
-    background: #fff;
+  background: #fff;
 }
 
+.gallery {
+  margin-top: 85px;
+}
+
+.gallery h2 {
+  color: #2b2a2a;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 52px;
+  text-transform: uppercase;
+}
+
+.gallery .gallery-row {
+  gap: 52px;
+}
+
+.gallery-button {
+  margin-top: 20px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  width: 262px;
+  height: 68px;
+  padding: 10px 16px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #2b2a2a;
+  border-color: #2b2a2a;
+}
+
+.contact-item {
+  position: relative;
+  border-radius: 25px;
+  background: rgba(13, 13, 13, 0.5);
+}
+
+.contact-bg {
+  background: url(./assets/contact-background.jpg) no-repeat;
+  background-size: cover;
+}
+
+.contact-bg h2 {
+  color: #fff;
+  margin: 52px 0;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.contact-bg h3,
+.contact-bg p {
+  color: #fff;
+}
+
+.contact-bg h3 {
+  margin: 0;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: -17px;
+  left: 0;
+  right: 0;
+}
+
+.contact-bg p {
+  margin: 57px auto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+form div div {
+  text-align: left;
+}
+
+.contact-item label {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.contact-item .contact-item-form {
+  gap: 20px;
+}
+
+.contact-item form {
+  margin: 100px 0;
+}
+
+.contact-item .gallery-button {
+  width: 100%;
+  height: unset;
+}
+
+footer {
+  background: #d9d9d9;
+}
+
+footer p {
+  padding: 36px 0;
+  color: #acacac;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
 @media (max-width: 767px) {
-    .nav-override {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 2;
-    }
+  .nav-override {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
 }
 
 @media (min-width: 768px) {
-    img {
-        width: 100%;
-    }
+  .mb-sm-32 {
+    margin-bottom: unset;
+  }
+  img {
+    width: 100%;
+  }
+  .homepage-card {
+    right: 30px;
+    left: unset;
+  }
+  .gallery .gallery-row {
+    gap: 20px;
+  }
+  .gallery h2 {
+    font-size: 96px;
+  }
+  .gallery-button {
+    margin-top: 25px;
+  }
+
+  .gallery .gallery-row div {
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .gallery-row .hover-zoom {
+    transition: all 0.3s ease-in-out;
+  }
+  .gallery-row .hover-zoom:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+  .contact-item .contact-item-form {
+    gap: unset;
+    row-gap: 27px;
+  }
+  .contact-item form {
+    margin: 50px;
+  }
+  footer p {
+    font-size: 32px;
+  }
 }
