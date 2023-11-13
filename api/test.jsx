@@ -1,3 +1,3 @@
 export default (req, res) => {
-    res.json({ message: 'Route is working! })
+    res.json({ message: 'Route is working!' })
 }
