@@ -9,7 +9,7 @@ const FormBox = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
-    fetch("http://localhost:3000/api/send-email", {
+    fetch(`${import.meta.env.VITE_SEND_EMAIL_API}`, {
       method: "POST",
       body: formData,
     })

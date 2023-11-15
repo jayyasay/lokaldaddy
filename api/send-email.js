@@ -1,3 +1,5 @@
+import { config } from 'dotenv';
+config();
 import nodemailer from "nodemailer";
 import { IncomingForm } from "formidable";
 
@@ -26,7 +28,7 @@ export default async (req, res) => {
     service: "gmail",
     auth: {
       user: "paolo.yasay@gmail.com",
-      pass: "zxiy nlhd ctsp oyny",
+      pass: process.env.GOOGLE_APP_PASSWORD,
     },
   });
 
