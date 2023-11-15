@@ -264,6 +264,11 @@ form div div {
   letter-spacing: -1.25px;
 }
 
+.gallery-row .hover-zoom {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
 @media (max-width: 767px) {
   .nav-override {
     position: fixed;
@@ -300,11 +305,8 @@ form div div {
     flex: 1;
   } */
 
-  .gallery-row .hover-zoom {
-    transition: all 0.3s ease-in-out;
-  }
   .gallery-row .hover-zoom:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
     transition: all 0.3s ease-in-out;
   }
   .contact-item .contact-item-form {
