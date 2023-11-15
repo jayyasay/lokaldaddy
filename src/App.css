@@ -233,6 +233,41 @@ form div div {
   line-height: normal;
   margin: 0;
 }
+
+.card-override {
+  flex-direction: row;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-radius: 0;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override > * {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override:hover {
+  background: rgba(000, 000, 000, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override:hover > * {
+  color: #fff;
+}
+
+.card-override svg {
+  font-size: 50px;
+}
+
+.card-override .card-text {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -1.25px;
+}
+
 @media (max-width: 767px) {
   .nav-override {
     position: fixed;
@@ -294,5 +329,9 @@ form div div {
   }
   footer p {
     font-size: 32px;
+  }
+  .card-override .card-text {
+    font-size: 24px;
+    text-wrap: nowrap;
   }
 }
