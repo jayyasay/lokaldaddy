@@ -119,10 +119,6 @@
   text-transform: uppercase;
 }
 
-.gallery .gallery-row {
-  gap: 52px;
-}
-
 .gallery-button {
   margin-top: 20px;
   border-radius: 4px;
@@ -291,9 +287,6 @@ form div div {
     right: 30px;
     left: unset;
   }
-  .gallery .gallery-row {
-    gap: 20px;
-  }
   .gallery h2 {
     padding-top: 52px;
     font-size: 96px;
@@ -302,10 +295,10 @@ form div div {
     margin-top: 25px;
   }
 
-  .gallery .gallery-row div {
+  /* .gallery .gallery-row div {
     overflow: hidden;
     flex: 1;
-  }
+  } */
 
   .gallery-row .hover-zoom {
     transition: all 0.3s ease-in-out;
