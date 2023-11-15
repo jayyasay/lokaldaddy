@@ -1,43 +1,59 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 function BasicExample() {
+  const [expanded, setExpanded] = useState(false);
+  const handleSelect = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    setExpanded(false);
+  };
   return (
-    <Navbar collapseOnSelect expand="sm" className="bg-dark bg-gradient nav-override p-0" >
+    <Navbar
+      expand="sm"
+      expanded={expanded}
+      className="bg-dark bg-gradient nav-override p-0"
+      onToggle={(newExpanded) => setExpanded(newExpanded)}
+    >
       <Container>
         <Navbar.Brand href="#home" className="text-light p-0">
-          <img src={Logo} alt="Logo" style={{height: '66px', padding: 0}} />
+          <img src={Logo} alt="Logo" style={{ height: "66px", padding: 0 }} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="text-light text-uppercase">
-            <Nav.Link href="#home" className="text-light">
+            <Nav.Link
+              as={Link}
+              to="/"
+              className="text-light"
+              onClick={handleSelect}
+            >
               Home
             </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
+            <Nav.Link
+              as={Link}
+              to="/gallery"
+              className="text-light"
+              onClick={handleSelect}
+            >
               Gallery
             </Nav.Link>
-            <Nav.Link href="#link" className="text-light">
-              Contact us
-            </Nav.Link>
-            {/* <NavDropdown
-              title="Dropdown"
-              id="basic-nav-dropdown"
-              className="custom-dropdown-light"
+            <Nav.Link
+              as={Link}
+              to="/contact-us"
+              className="text-light"
+              onClick={handleSelect}
             >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
+              Request an appointment
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

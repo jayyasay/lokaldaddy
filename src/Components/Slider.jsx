@@ -12,11 +12,33 @@ import {
   Keyboard,
   Autoplay,
 } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const Slider = () => {
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      y: 20,
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+    },
+    out: {
+      opacity: 0,
+      y: -20,
+      transition: { duration: 0.3 },
+    },
+  };
   return (
     <>
-      <Container fluid>
+      <motion.div
+        className="container-fluid"
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+      >
         <Row>
           <Col
             style={{ position: "relative", paddingLeft: 0, paddingRight: 0 }}
@@ -78,7 +100,7 @@ const Slider = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </motion.div>
     </>
   );
 };

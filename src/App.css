@@ -108,10 +108,6 @@
   background: #fff;
 }
 
-.gallery {
-  margin-top: 85px;
-}
-
 .gallery h2 {
   color: #2b2a2a;
   font-size: 36px;
@@ -119,6 +115,7 @@
   font-weight: 800;
   line-height: normal;
   margin-bottom: 52px;
+  padding-top: 52px;
   text-transform: uppercase;
 }
 
@@ -158,11 +155,13 @@
 .contact-bg {
   background: url(./assets/contact-background.jpg) no-repeat;
   background-size: cover;
+  margin-top: 66px;
 }
 
 .contact-bg h2 {
+  padding-top: 52px;
   color: #fff;
-  margin: 52px 0;
+  margin: 0 0 52px 0;
   font-size: 36px;
   font-style: normal;
   font-weight: 800;
@@ -220,11 +219,11 @@ form div div {
   height: unset;
 }
 
-footer {
+.footer {
   background: #d9d9d9;
 }
 
-footer p {
+.footer p {
   padding: 36px 0;
   color: #acacac;
   font-family: Roboto;
@@ -234,12 +233,50 @@ footer p {
   line-height: normal;
   margin: 0;
 }
+
+.card-override {
+  flex-direction: row;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-radius: 0;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override > * {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override:hover {
+  background: rgba(000, 000, 000, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-override:hover > * {
+  color: #fff;
+}
+
+.card-override svg {
+  font-size: 50px;
+}
+
+.card-override .card-text {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -1.25px;
+}
+
 @media (max-width: 767px) {
   .nav-override {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 3;
+  }
+  .gallery {
+    margin-top: 66px;
   }
 }
 
@@ -258,6 +295,7 @@ footer p {
     gap: 20px;
   }
   .gallery h2 {
+    padding-top: 52px;
     font-size: 96px;
   }
   .gallery-button {
@@ -283,7 +321,17 @@ footer p {
   .contact-item form {
     margin: 50px;
   }
+  .contact-bg {
+    margin-top: unset;
+  }
+  .contact-bg h2 {
+    font-size: 96px;
+  }
   footer p {
     font-size: 32px;
+  }
+  .card-override .card-text {
+    font-size: 24px;
+    text-wrap: nowrap;
   }
 }
