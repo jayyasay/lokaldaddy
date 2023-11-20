@@ -107,6 +107,10 @@
     background: #fff;
 }
 
+.gallery {
+    padding-bottom: 30px;
+}
+
 .gallery h2 {
     color: #2b2a2a;
     font-size: 36px;

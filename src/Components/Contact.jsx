@@ -32,7 +32,7 @@ const Contact = () => {
       >
         <h2>ABOUT OUR PARLOR</h2>
         <Container>
-          <Row className="container m-auto">
+          <Row className="container m-auto" style={{ paddingBottom: "50px" }}>
             <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
               <SmallBox />
             </Col>
