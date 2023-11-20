@@ -8,11 +8,8 @@ const Footer = () => {
     <>
       <Container className="footer" fluid>
         <Row>
-          <Col xs={12} md={6}>
-            <p>© 2023 All Rights Reserved - LokalDaddy PH</p>
-          </Col>
-          <Col xs={12} md={6}>
-            <SocialMedia />
+          <Col xs={12} md={12}>
+            <p className="text-center">© 2023 All Rights Reserved - LokalDaddy PH</p>
           </Col>
         </Row>
       </Container>
