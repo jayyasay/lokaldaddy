@@ -197,6 +197,10 @@ form div div {
     text-align: left;
 }
 
+form .react-datepicker {
+    display: flex;
+}
+
 form div div.react-datepicker__current-month,
 form div div.react-datepicker-time__header {
     text-align: center;
