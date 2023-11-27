@@ -35,16 +35,24 @@ export default async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "paolo.yasay@gmail.com",
+      user: "lokaldaddy2017@gmail.com",
       pass: process.env.GOOGLE_APP_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: "paolo.yasay@gmail.com",
-    to: "paolo_yasay@yahoo.com",
+    from: "lokaldaddy2017@gmail.com",
+    to: "lokaldaddy2017@gmail.com",
     subject: `NEW APPOINTMENT HAS BEEN MADE`,
-    text: `GREETINGS! You have a new appointment from ${name} with contact number ${number} and scheduled to ${date}`,
+    html: `
+    <html>
+      <body>
+        <h1 style="color: #000;">Greetings from LokalDaddyPH!</h1>
+        <p>You have a new appointment from <strong>${name}</strong></p>
+        <p>Contact Number: <strong>${number}</strong></p>
+        <p>Scheduled Date: <strong>${date}</strong></p>
+      </body>
+    </html>`,
   };
 
   try {
