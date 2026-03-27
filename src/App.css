@@ -1390,7 +1390,6 @@ img {
     font-size: clamp(1.8rem, 10vw, 2.7rem);
   }
 
-  .hero-banner-image img,
   .page-hero-image img,
   .showcase-phone img {
     height: 340px;

@@ -1,9 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FiClock, FiMapPin, FiPhone } from "react-icons/fi";
 import logo from "../assets/logo.jpg";
 
 const Footer = () => {
+  const location = useLocation();
+
+  const handleFooterNavigation = (event, targetPath) => {
+    if (location.pathname === targetPath) {
+      event.preventDefault();
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+    }
+  };
+
   return (
     <footer className="site-footer">
       <div className="section-inner footer-grid">
@@ -22,9 +36,21 @@ const Footer = () => {
 
         <div className="footer-links">
           <h3>Explore</h3>
-          <Link to="/">Home</Link>
-          <Link to="/gallery">Gallery</Link>
-          <Link to="/contact-us">Consultation</Link>
+          <Link to="/" onClick={(event) => handleFooterNavigation(event, "/")}>
+            Home
+          </Link>
+          <Link
+            to="/gallery"
+            onClick={(event) => handleFooterNavigation(event, "/gallery")}
+          >
+            Gallery
+          </Link>
+          <Link
+            to="/contact-us"
+            onClick={(event) => handleFooterNavigation(event, "/contact-us")}
+          >
+            Consultation
+          </Link>
         </div>
 
         <div className="footer-details">

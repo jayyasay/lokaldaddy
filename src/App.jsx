@@ -14,7 +14,25 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Analytics } from "@vercel/analytics/react";
 
+function scrollPageToTop() {
+  const runScroll = () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  runScroll();
+  requestAnimationFrame(runScroll);
+  setTimeout(runScroll, 120);
+}
+
 function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   return (
     <>
       <Router>
@@ -55,11 +73,7 @@ function ScrollToTop() {
       return;
     }
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    scrollPageToTop();
   }, [location.pathname, location.hash]);
 
   return null;
