@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { FiMail, FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.jpg";
 
@@ -107,12 +107,12 @@ function Navigation() {
                 <a href="https://www.facebook.com/Lokaldaddy" target="_blank" rel="noreferrer">
                   <FaFacebookF />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+                {/* <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                   <FaInstagram />
                 </a>
                 <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
                   <FaTiktok />
-                </a>
+                </a> */}
               </div>
             </aside>
           </div>

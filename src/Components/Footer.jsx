@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { FiClock, FiMapPin, FiPhone } from "react-icons/fi";
 import logo from "../assets/logo.jpg";
 
@@ -73,12 +73,12 @@ const Footer = () => {
             <a href="https://www.facebook.com/Lokaldaddy" target="_blank" rel="noreferrer">
               <FaFacebookF />
             </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
               <FaInstagram />
             </a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
               <FaTiktok />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
