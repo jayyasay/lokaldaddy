@@ -1,52 +1,80 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Container } from "react-bootstrap";
-import SmallBox from "./ContactComponents/SmallBox";
-import FormBox from "./ContactComponents/FormBox";
 import { motion } from "framer-motion";
+import { FiClock, FiMapPin, FiPhone } from "react-icons/fi";
+import FormBox from "./ContactComponents/FormBox";
+import SmallBox from "./ContactComponents/SmallBox";
+
+const reveal = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
+};
 
 const Contact = () => {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      y: 20,
-    },
-    in: {
-      opacity: 1,
-      y: 0,
-    },
-    out: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.3 },
-    },
-  };
   return (
-    <>
-      <motion.div
-        className="contact-bg g-0"
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
+    <main className="page-shell">
+      <motion.section
+        className="page-hero"
+        initial="hidden"
+        animate="visible"
+        variants={reveal}
       >
-        <h2>ABOUT OUR PARLOR</h2>
-        <Container>
-          <Row className="container m-auto" style={{ paddingBottom: "50px" }}>
-            <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
-              <SmallBox />
-            </Col>
-            <Col
-              xs={{ span: 12, order: 1 }}
-              md={{ span: 6, order: 2 }}
-              className="mb-sm-32"
-            >
-              <FormBox />
-            </Col>
-          </Row>
-        </Container>
-      </motion.div>
-    </>
+        <div className="section-inner page-hero-grid contact-hero-grid">
+          <div className="section-copy">
+            <span className="eyebrow">Consultation</span>
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <h1>Let's figure it out properly before we put anything on your skin.</h1>
+            <p>
+              We go through your idea, placement, and size so there are no surprises when you come in.
+
+            </p>
+            <div className="consultation-points compact">
+              <article>
+                <FiMapPin />
+                <span>
+                  B2 L29 Yen Street, Villa Carolina 1, Tunasan, Muntinlupa City
+                </span>
+              </article>
+              <article>
+                <FiPhone />
+                <span>0999 123 4567</span>
+              </article>
+              <article>
+                <FiClock />
+                <span>Flexible consultations and appointment scheduling</span>
+              </article>
+            </div>
+          </div>
+
+          <SmallBox />
+        </div>
+      </motion.section>
+
+      <motion.section
+        id="start-your-booking"
+        className="section-block warm-surface"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={reveal}
+      >
+        <div className="section-inner consultation-grid contact-request-grid">
+          <div className="section-heading centered">
+            <span className="eyebrow">Start your booking</span>
+            <h2>Send your idea first. We’ll guide you from there.</h2>
+            <p>
+              No need to overthink it. Just tell us what you want and we’ll help you shape it properly.
+            </p>
+          </div>
+
+          <div className="contact-form-shell">
+            <FormBox />
+          </div>
+        </div>
+      </motion.section>
+    </main>
   );
 };
 

@@ -1,38 +1,37 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Container } from "react-bootstrap";
+import { FiClock, FiMapPin, FiPhone } from "react-icons/fi";
 
-const data = [
+const details = [
   {
-    title: "Address",
+    icon: <FiMapPin />,
+    title: "Location",
     content:
-      "B2 L29 Yen street Villa Carolina 1 Tunasan 1771 Muntinlupa City, Philippines",
+      "Easy to find, private, and comfortable setup.",
   },
   {
-    title: "Opening Hours",
-    content: "Always open",
+    icon: <FiClock />,
+    title: "Availability",
+    content: "Open daily for consultations and tattoo sessions.",
   },
   {
-    title: "Contact",
-    content: "09991234567",
+    icon: <FiPhone />,
+    title: "Direct contact",
+    content: "Message or call anytime and we'll get back to you.",
   },
 ];
 
 const SmallBox = () => {
   return (
-    <>
-      <Container className="flex-column">
-        {data &&
-          data.map((item, index) => (
-            <Row>
-              <Col className="contact-item">
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
-              </Col>
-            </Row>
-          ))}
-      </Container>
-    </>
+    <div className="contact-detail-stack">
+      {details.map((item) => (
+        <article key={item.title} className="contact-detail-card">
+          <div className="feature-icon">{item.icon}</div>
+          <div>
+            <h3>{item.title}</h3>
+            <p>{item.content}</p>
+          </div>
+        </article>
+      ))}
+    </div>
   );
 };
 

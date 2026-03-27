@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Navigation />
         <AnimatedPage>
           <Route path="/" element={<Home />} />
@@ -29,6 +30,39 @@ function App() {
       <Analytics />
     </>
   );
+}
+
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = decodeURIComponent(location.hash.slice(1));
+
+      const scrollToAnchor = () => {
+        const element = document.getElementById(targetId);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      };
+
+      requestAnimationFrame(scrollToAnchor);
+      setTimeout(scrollToAnchor, 150);
+      return;
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [location.pathname, location.hash]);
+
+  return null;
 }
 
 // AnimatedPage component that wraps each page with AnimatePresence
