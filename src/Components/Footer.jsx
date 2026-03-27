@@ -70,7 +70,7 @@ const Footer = () => {
         <div className="footer-social">
           <h3>Follow</h3>
           <div>
-            <a href="https://www.facebook.com/Lokaldaddy" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/LocalDaddytattoo" target="_blank" rel="noreferrer">
               <FaFacebookF />
             </a>
             {/* <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
